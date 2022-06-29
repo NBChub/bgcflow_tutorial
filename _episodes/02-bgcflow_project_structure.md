@@ -98,7 +98,8 @@ Replace those lines with this:
 For now, we will just use two mandatory variables:
 - `name` : name of your project
 - `samples` : a csv file containing a list of genome ids for analysis with multiple sources mentioned. Genome ids must be unique.
-PS: Commented lines will not be processed.
+
+**PS:** Commented lines will not be processed.
 
 ### Checking the jobs with Snakemake dry-run
 Before, we use the `-n` when calling `snakemake`. This parameters means a dry-run, which is used to simulate all the jobs that will be run given the information provided in the config file. You can also add the parameters `-r` to see the reason why those jobs are generated.
