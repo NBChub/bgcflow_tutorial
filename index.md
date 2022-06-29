@@ -11,7 +11,7 @@ This is a short tutorial on [BGCflow](https://github.com/NBChub/bgcflow) specifi
 
 > ## Prerequisites
 > No prerequisites are needed, but it would be better if you already have a short introduction to the Unix Shell and git.
-> We can recommend this two lessons:
+> We can recommend this lesson:
 > - [Automating Tasks with the Unix Shell](https://data-science-for-biotech.github.io/shell-novice/)
 {: .prereq}
 
