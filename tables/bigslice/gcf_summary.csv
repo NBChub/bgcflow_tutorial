@@ -1,0 +1,115 @@
+,core_member,putative_member,core_member_mibig,putative_member_mibig,core_member_mibig_count,core_member_mibig_bool,putative_member_mibig_count,putative_member_mibig_bool,link to BiG-FAM
+203601,1406,201,"['BGC0000850.1', 'BGC0000849.1', 'BGC0000848.1']",[],3,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/203601
+208355,6440,3186,"['BGC0000595.1', 'BGC0000596.1', 'BGC0000933.1', 'BGC0002020.1', 'BGC0000597.1', 'BGC0000892.1']","['BGC0001137.1', 'BGC0001295.1']",6,True,2,True,https://bigfam.bioinformatics.nl/run/6/gcf/208355
+200946,131525,4659,"['BGC0001286.1', 'BGC0001864.1', 'BGC0002005.1', 'BGC0000244.1', 'BGC0000487.1', 'BGC0000817.1', 'BGC0000618.1', 'BGC0000757.1', 'BGC0001989.1', 'BGC0001990.1', 'BGC0001554.1', 'BGC0000884.1', 'BGC0000617.1', 'BGC0001167.1', 'BGC0001685.1', 'BGC0000562.1', 'BGC0000948.1', 'BGC0000620.1', 'BGC0001505.1', 'BGC0000589.1', 'BGC0000510.1', 'BGC0000737.1', 'BGC0001994.1', 'BGC0000746.1', 'BGC0001887.1', 'BGC0000944.1', 'BGC0001862.1', 'BGC0000779.1', 'BGC0001883.1', 'BGC0001291.1', 'BGC0000588.1', 'BGC0000745.1', 'BGC0000478.1', 'BGC0001949.1', 'BGC0000624.1', 'BGC0001316.1', 'BGC0000484.1', 'BGC0001262.1', 'BGC0001992.1', 'BGC0001933.1', 'BGC0000590.1', 'BGC0000522.1', 'BGC0001315.1', 'BGC0000755.1', 'BGC0000743.1', 'BGC0000558.1', 'BGC0001616.1', 'BGC0000756.1', 'BGC0000748.1', 'BGC0000485.1', 'BGC0001535.1', 'BGC0000622.1', 'BGC0001306.1', 'BGC0000742.1', 'BGC0001725.1', 'BGC0000505.1', 'BGC0000744.1', 'BGC0002004.1', 'BGC0001639.1', 'BGC0000677.1', 'BGC0000016.1', 'BGC0000472.1', 'BGC0000005.1', 'BGC0000477.1', 'BGC0001601.1', 'BGC0001530.1', 'BGC0000754.1', 'BGC0000749.1', 'BGC0001974.1', 'BGC0001638.1', 'BGC0000607.1', 'BGC0000488.1', 'BGC0000621.1', 'BGC0001888.1', 'BGC0000491.1', 'BGC0001678.1', 'BGC0001577.1', 'BGC0000751.1', 'BGC0000616.1', 'BGC0000918.1', 'BGC0000387.1', 'BGC0000747.1', 'BGC0000493.1', 'BGC0000903.1', 'BGC0000920.1', 'BGC0001468.1', 'BGC0001217.1', 'BGC0000489.1', 'BGC0001684.1', 'BGC0000619.1', 'BGC0000673.1', 'BGC0000753.1', 'BGC0000741.1', 'BGC0001924.1', 'BGC0000810.1', 'BGC0001809.1', 'BGC0000494.1', 'BGC0001134.1', 'BGC0001811.1', 'BGC0001632.1', 'BGC0001587.1', 'BGC0001681.1', 'BGC0000623.1', 'BGC0001682.1', 'BGC0001743.1', 'BGC0001222.1', 'BGC0000740.1', 'BGC0000479.1', 'BGC0001799.1', 'BGC0000482.1', 'BGC0000492.1', 'BGC0000490.1', 'BGC0001602.1', 'BGC0000520.1', 'BGC0000738.1', 'BGC0001680.1', 'BGC0001534.1', 'BGC0000486.1', 'BGC0000798.1', 'BGC0001388.1', 'BGC0001930.1', 'BGC0000923.1', 'BGC0001891.1', 'BGC0000476.1']","['BGC0000736.1', 'BGC0000883.1', 'BGC0000765.1', 'BGC0001521.1', 'BGC0002031.1', 'BGC0001318.1', 'BGC0000735.1', 'BGC0001487.1', 'BGC0000739.1', 'BGC0000764.1', 'BGC0001633.1', 'BGC0000802.1', 'BGC0001120.1', 'BGC0000665.1', 'BGC0000843.1', 'BGC0000666.1', 'BGC0001380.1', 'BGC0000789.1', 'BGC0000752.1', 'BGC0000701.1', 'BGC0001765.1', 'BGC0001935.1', 'BGC0000770.1', 'BGC0000734.1', 'BGC0001937.1', 'BGC0000608.1', 'BGC0001859.1', 'BGC0000725.1', 'BGC0000904.1']",124,True,29,True,https://bigfam.bioinformatics.nl/run/6/gcf/200946
+207795,192,346,[],['BGC0001476.1'],0,False,1,True,https://bigfam.bioinformatics.nl/run/6/gcf/207795
+213140,1871,1165,"['BGC0001928.1', 'BGC0001893.1', 'BGC0001605.1', 'BGC0000671.1', 'BGC0001184.1', 'BGC0000867.1', 'BGC0000866.1', 'BGC0000101.1', 'BGC0000888.1']","['BGC0001882.1', 'BGC0001985.1', 'BGC0000887.1', 'BGC0000928.1', 'BGC0000769.1', 'BGC0000188.1', 'BGC0000894.1', 'BGC0001510.1', 'BGC0000919.1']",9,True,9,True,https://bigfam.bioinformatics.nl/run/6/gcf/213140
+203037,8270,2009,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/203037
+210179,9091,1159,"['BGC0001201.1', 'BGC0001181.1', 'BGC0001911.1', 'BGC0001746.1', 'BGC0000661.1', 'BGC0000683.1', 'BGC0000660.1', 'BGC0001321.1', 'BGC0001481.1', 'BGC0000667.1', 'BGC0000631.1', 'BGC0001997.1', 'BGC0001323.1', 'BGC0000672.1', 'BGC0001642.1', 'BGC0001756.1']","['BGC0001910.1', 'BGC0001322.1', 'BGC0001324.1']",16,True,3,True,https://bigfam.bioinformatics.nl/run/6/gcf/210179
+201041,839,51,"['BGC0000908.1', 'BGC0000912.1', 'BGC0000909.1', 'BGC0000910.1', 'BGC0000911.1']","['BGC0002029.1', 'BGC0000662.1', 'BGC0000885.1', 'BGC0000889.1', 'BGC0001592.1']",5,True,5,True,https://bigfam.bioinformatics.nl/run/6/gcf/201041
+202433,110,56,"['BGC0000593.1', 'BGC0000591.1', 'BGC0000592.1']",[],3,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202433
+201637,2195,1035,"['BGC0000844.1', 'BGC0001683.1', 'BGC0000812.1']",[],3,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201637
+201682,8879,905,['BGC0001839.1'],[],1,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201682
+203815,202,7,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/203815
+201830,3026,705,"['BGC0000571.1', 'BGC0000570.1', 'BGC0001673.1', 'BGC0001506.1', 'BGC0000575.1', 'BGC0001645.1', 'BGC0001307.1', 'BGC0001548.1', 'BGC0000579.1', 'BGC0001551.1', 'BGC0001779.1', 'BGC0001655.1', 'BGC0001494.1', 'BGC0000572.1', 'BGC0001507.1', 'BGC0001889.1', 'BGC0000577.1', 'BGC0001921.1', 'BGC0001634.1', 'BGC0001176.1', 'BGC0001920.1', 'BGC0000574.1', 'BGC0000581.1', 'BGC0002015.1', 'BGC0001549.1', 'BGC0001539.1', 'BGC0000580.1', 'BGC0001496.1', 'BGC0001552.1', 'BGC0000578.1', 'BGC0001550.1', 'BGC0001781.1', 'BGC0001493.1', 'BGC0000576.1', 'BGC0001786.1', 'BGC0001674.1', 'BGC0000573.1']",[],37,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201830
+201941,11864,350,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201941
+220008,248,84,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/220008
+220861,42,8,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/220861
+201585,23851,676,"['BGC0001453.1', 'BGC0001478.1', 'BGC0001572.1', 'BGC0001498.1', 'BGC0001870.1', 'BGC0000295.1', 'BGC0001713.1', 'BGC0001499.1', 'BGC0000941.1', 'BGC0000939.1', 'BGC0001531.1', 'BGC0000940.1']",[],12,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201585
+214329,2576,139,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/214329
+201821,2796,249,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201821
+201767,9590,663,"['BGC0000855.1', 'BGC0000860.1', 'BGC0000852.1', 'BGC0000857.1', 'BGC0000858.1', 'BGC0000856.1', 'BGC0000853.1', 'BGC0000859.1', 'BGC0000854.1']",[],9,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201767
+202780,648,473,[],"['BGC0000278.1', 'BGC0000871.1', 'BGC0001817.1', 'BGC0001747.1']",0,False,4,True,https://bigfam.bioinformatics.nl/run/6/gcf/202780
+202085,6391,225,"['BGC0000946.1', 'BGC0001408.1', 'BGC0000947.1']",[],3,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202085
+212849,589,372,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/212849
+203993,448,207,"['BGC0000658.1', 'BGC0001198.1', 'BGC0000659.1', 'BGC0000657.1']",[],4,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/203993
+227201,1415,117,"['BGC0000687.1', 'BGC0001604.1', 'BGC0001475.1', 'BGC0001528.1', 'BGC0001915.1', 'BGC0000685.1', 'BGC0000930.1', 'BGC0001995.1', 'BGC0001969.1']",[],9,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/227201
+203823,275,499,"['BGC0000675.1', 'BGC0002018.1']","['BGC0000896.1', 'BGC0000585.1', 'BGC0001410.1', 'BGC0001484.1', 'BGC0001488.1']",2,True,5,True,https://bigfam.bioinformatics.nl/run/6/gcf/203823
+218420,2,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/218420
+202774,29,17,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202774
+215277,2606,973,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/215277
+201592,112,71,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201592
+202312,367,134,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202312
+201011,2177,487,"['BGC0000650.1', 'BGC0000647.1']",[],2,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201011
+218961,1057,204,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/218961
+201648,37,3,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201648
+219881,699,8,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/219881
+203605,2,5,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/203605
+228366,124,32,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/228366
+202047,245,35,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202047
+224066,4,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/224066
+202078,3155,968,"['BGC0000496.1', 'BGC0000563.1', 'BGC0000519.1', 'BGC0000501.1', 'BGC0000553.1', 'BGC0000518.1', 'BGC0000551.1', 'BGC0000546.1', 'BGC0000513.1']",[],9,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202078
+203015,5785,1042,"['BGC0000526.1', 'BGC0000521.1', 'BGC0000497.1', 'BGC0001579.1', 'BGC0000554.1', 'BGC0001788.1', 'BGC0001407.1', 'BGC0000547.1', 'BGC0000502.1', 'BGC0000552.1', 'BGC0001311.1', 'BGC0000498.1', 'BGC0001660.1', 'BGC0000528.1', 'BGC0000626.1', 'BGC0001229.1', 'BGC0000499.1', 'BGC0000525.1', 'BGC0000545.1', 'BGC0000548.1', 'BGC0000561.1', 'BGC0000527.1', 'BGC0000500.1', 'BGC0001576.1', 'BGC0000517.1', 'BGC0000539.1', 'BGC0000503.1', 'BGC0001210.1', 'BGC0000534.1', 'BGC0000532.1', 'BGC0000550.1', 'BGC0001392.1', 'BGC0001787.1', 'BGC0000504.1', 'BGC0000555.1', 'BGC0000523.1', 'BGC0001391.1', 'BGC0000557.1', 'BGC0000516.1']",['BGC0001364.1'],39,True,1,True,https://bigfam.bioinformatics.nl/run/6/gcf/203015
+210086,16,2,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/210086
+203048,130,47,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/203048
+216473,224,275,"['BGC0001659.1', 'BGC0000584.1']",['BGC0001555.1'],2,True,1,True,https://bigfam.bioinformatics.nl/run/6/gcf/216473
+207142,8,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207142
+207413,13033,62,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207413
+225087,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/225087
+201943,211,128,"['BGC0001456.1', 'BGC0000664.1', 'BGC0001227.1', 'BGC0000649.1', 'BGC0000633.1']",[],5,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201943
+208234,40,38,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/208234
+208202,35,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/208202
+204968,101,76,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204968
+202162,2616,755,"['BGC0001803.1', 'BGC0001696.1', 'BGC0001802.1', 'BGC0000625.1', 'BGC0001849.1']",[],5,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202162
+219541,6,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/219541
+208857,232,84,['BGC0002006.1'],[],1,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/208857
+203561,67,99,[],"['BGC0001374.1', 'BGC0001739.1', 'BGC0001610.1']",0,False,3,True,https://bigfam.bioinformatics.nl/run/6/gcf/203561
+202041,128,16,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202041
+221786,9,1,"['BGC0000582.1', 'BGC0000583.1']",[],2,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/221786
+214468,1,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/214468
+202766,16,87,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202766
+201306,4609,872,"['BGC0000564.1', 'BGC0000567.1', 'BGC0001171.1', 'BGC0000568.1', 'BGC0002013.1', 'BGC0001174.1', 'BGC0000566.1', 'BGC0001170.1']",[],8,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201306
+214594,413,146,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/214594
+225089,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/225089
+207295,28,12,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207295
+201963,558,190,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201963
+218572,968,377,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/218572
+206798,78,17,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/206798
+202773,7,2,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202773
+214086,1142,372,"['BGC0000613.1', 'BGC0000628.1', 'BGC0000605.1', 'BGC0000606.1', 'BGC0000615.1', 'BGC0001640.1', 'BGC0001472.1', 'BGC0001145.1', 'BGC0001146.1', 'BGC0000603.1', 'BGC0001860.1']","['BGC0000604.1', 'BGC0001155.1']",11,True,2,True,https://bigfam.bioinformatics.nl/run/6/gcf/214086
+203490,6,20,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/203490
+204384,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204384
+209606,7,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/209606
+204385,182,361,"['BGC0000285.1', 'BGC0000902.1', 'BGC0001310.1']",[],3,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204385
+214471,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/214471
+218422,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/218422
+202768,51,16,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202768
+202771,6,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202771
+201175,9,7,['BGC0000893.1'],[],1,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/201175
+213072,3,2,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/213072
+202772,8,4,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202772
+214470,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/214470
+204382,3,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204382
+212976,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/212976
+202770,15,12,['BGC0001752.1'],[],1,True,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202770
+211420,2,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/211420
+207319,5,4,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207319
+225086,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/225086
+214469,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/214469
+216771,7,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/216771
+204381,4,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204381
+204383,3,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204383
+207318,3,2,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207318
+204379,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204379
+207311,4,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207311
+207314,6,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207314
+218423,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/218423
+207315,4,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207315
+225418,2,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/225418
+202775,6,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202775
+204387,2,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204387
+202767,5,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202767
+225083,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/225083
+203489,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/203489
+223986,1,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/223986
+223987,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/223987
+223985,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/223985
+204380,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204380
+200956,7,4,[],['BGC0001819.1'],0,False,1,True,https://bigfam.bioinformatics.nl/run/6/gcf/200956
+207312,4,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207312
+207317,9,5,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/207317
+214473,1,5,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/214473
+204378,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204378
+204386,2,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/204386
+202769,6,1,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/202769
+214472,1,0,[],[],0,False,0,False,https://bigfam.bioinformatics.nl/run/6/gcf/214472
