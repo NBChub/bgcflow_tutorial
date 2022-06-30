@@ -1,17 +1,16 @@
 ---
-title: "Part II: Exploring BiG-SLICE query result"
+title: Exploring BiG-SLICE query result
 teaching: 0
 exercises: 20
 questions:
-    - " How do I explore BiG-SLICE query result"
+    - " How do I annotate BiG-SLICE query result"
 objectives:
-    - Visualize query hits to BiG-FAM GCF models with Cytoscape
+    - "Enrich BiG-FAM hits with other BGCflow results"
 keypoints:
-    - "BGCflow returns an edge table of your BGC query to the top 10 hits of GCF models in the BiG-FAM database"
+    - "Different BGCflow outputs can be combined to enrich BiG-SLICE query network"
 ---
 
-## Exploring BiG-SLICE Query result
-In this network, we will explore BiG-SLICE query hits of _S. venezuelae_ genomes with the [BiG-FAM database (version 1.0.0, run 6)](https://bigfam.bioinformatics.nl/home).
+In this episode, we will explore BiG-SLICE query hits of _S. venezuelae_ genomes with the [BiG-FAM database (version 1.0.0, run 6)](https://bigfam.bioinformatics.nl/home). You can download [the `.ipynb` file of this episode](https://github.com/NBChub/bgcflow_tutorial/blob/gh-pages/_episodes/06-bigslice_query-part2.ipynb) and run it from your own directory.
 
 ### Table of Contents
 1. [BGCflow Paths Configuration](#1)
@@ -20,9 +19,12 @@ In this network, we will explore BiG-SLICE query hits of _S. venezuelae_ genomes
     - [Sanity Check: How many gene clusters predicted by antiSMASH?](#3.1)
     - [How many BGCs can be assigned to BiG-FAM gene cluster families?](#3.2)
     - [A closer look to BiG-FAM distributions](#3.3)
-4. [Visualize BiG-FAM hits as network](#4)
+4. [Annotate Network with information from BiG-SCAPE and GTDB](#4)
+5. [Import the annotation to Cytoscape](#5)
 
-# Libraries & Functions
+### Libraries & Functions
+
+
 ```python
 # load libraries
 import pandas as pd
@@ -77,14 +79,13 @@ def plot_overview(data):
     return
 ```
 
-## BGCflow Paths Configuration
+## BGCflow Paths Configuration <a name="1"></a>
 Customize the cell below to your BGCflow result paths
 
 
 ```python
 # interim data
 bigslice_query = Path("/datadrive/home/matinnu/bgcflow_data/interim/bigslice/query/s_venezuelae_antismash_6.0.1/")
-
 
 # processed data
 bigslice_query_processed = Path("/datadrive/bgcflow/data/processed/s_venezuelae/bigslice/query_as_6.0.1/")
@@ -96,7 +97,7 @@ output_path = Path("../tables/bigslice")
 output_path.mkdir(parents=True, exist_ok=True)
 ```
 
-## Raw BiG-SLICE query hits
+## Raw BiG-SLICE query hits <a name="2"></a>
 First, let's see the raw data from BiG-SLICE query hits. We have extracted individual tables from the SQL database.
 
 
@@ -132,10 +133,11 @@ The data from the interim folder has been processed for downstream analysis in t
 ```
 
     [01;34m/datadrive/bgcflow/data/processed/s_venezuelae/bigslice/query_as_6.0.1/[00m
+    ├── gcf_summary.csv
     ├── gcf_summary.json
     └── query_network.csv
     
-    0 directories, 2 files
+    0 directories, 3 files
 
 
 
@@ -324,8 +326,8 @@ df_bgc.head()
 
 
 
-## A glimpse of the data distribution
-### Sanity Check: How many gene clusters predicted by antiSMASH?
+## A glimpse of the data distribution <a name="3"></a>
+### Sanity Check: How many gene clusters predicted by antiSMASH? <a name="3.1"></a>
 
 
 ```python
@@ -335,7 +337,7 @@ print(f"There are {len(df_bgc)} BGCs predicted from {len(df_bgc.orig_folder.uniq
     There are 515 BGCs predicted from 18 genomes.
 
 
-### How many BGCs can be assigned to BiG-FAM gene cluster families?
+### How many BGCs can be assigned to BiG-FAM gene cluster families? <a name="3.2"></a>
 BiG-SLICE calculate the feature distance of a BGC to BiG-FAM models (which is a centroid of each Gene Cluster Families generated from 1.2 million BGCs). Though it's not that accurate, it can give us a glimpse of the distribution of our BGCs within the database.
 
 
@@ -360,7 +362,7 @@ for c in [900, 1200, 1500]:
 
 
     
-![png](output_18_1.png)
+![png](../fig/output_18_1.png)
     
 
 
@@ -368,18 +370,18 @@ Depending on the distance cutoffs, we can assign our BGCs to a different numbers
 
 Smaller number means a closer distance to the GCF model. For further analysis, we will stick with the default cutoff.
 
-### A closer look to BiG-FAM distributions
+### A closer look to BiG-FAM distributions <a name="3.3"></a>
 BGCflow already cleans the data for downstream processing. The processed bigslice query can be found in `bgcflow/data/processed/s_venezuelae/bigslice/query_as_6.0.1/`.
 
 
 ```python
-data = pd.read_csv(bigslice_query_processed / "query_network.csv", index_col=0)
+data = pd.read_csv(bigslice_query_processed / "query_network.csv")
 plot_overview(data)
 ```
 
 
     
-![png](output_21_0.png)
+![png](../fig/output_21_0.png)
     
 
 
@@ -405,7 +407,7 @@ plot_overview(data_1)
 
 
     
-![png](output_23_1.png)
+![png](../fig/output_23_1.png)
     
 
 
@@ -413,22 +415,7 @@ plot_overview(data_1)
     <Figure size 1800x1800 with 0 Axes>
 
 
-# Visualize BiG-FAM hits as network
-## Visualize network in Cytoscape
-One way that can be useful to navigate the result is to visualize the hits as a network enriched with metadata from antiSMASH and BiG-SCAPE. Here, we will prepare a matrix required for network analysis in Cytoscape
-
-
-```python
-data.to_csv("../tables/bigslice/query_network.csv", index=False)
-```
-
-A network can be generated from the file `query_network.csv` by using the value from `bgc_name` as source and `gcf_id` as target.
-
-***TO DO***
-- [ ] Tutorial Cytoscape
-- importing network
-
-## Annotate with metadata from BiG-SCAPE and GTDB
+## Annotate Network with information from BiG-SCAPE and GTDB <a name="4"></a>
 These network will only be meaningful when we enrich it with metadata. We can use information from our BiG-SCAPE runs, taxonomic information from GTDB-tk, and other tables generated by BGCflow. 
 
 
@@ -636,296 +623,11 @@ df_annotation.head()
 
 
 
-### Annotate models with information from BiG-FAM db
-From the step above, we have enriched the query nodes with metadata, but we are still lacking the information about the models. Let's enrich the models with the json file generated by BGCflow.
-
 
 ```python
-bigfam_hits = pd.read_json(bigslice_query_processed / "gcf_summary.json").T
-bigfam_hits.head()
+df_annotation.to_csv("../tables/bigslice/enriched_query_annotation.csv")
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>core_member</th>
-      <th>putative_member</th>
-      <th>core_member_mibig</th>
-      <th>putative_member_mibig</th>
-      <th>core_member_mibig_count</th>
-      <th>putative_member_mibig_count</th>
-      <th>link to BiG-FAM</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>203601</th>
-      <td>1406</td>
-      <td>201</td>
-      <td>[BGC0000850.1, BGC0000849.1, BGC0000848.1]</td>
-      <td>[]</td>
-      <td>3</td>
-      <td>0</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/203601</td>
-    </tr>
-    <tr>
-      <th>208355</th>
-      <td>6440</td>
-      <td>3186</td>
-      <td>[BGC0000595.1, BGC0000596.1, BGC0000933.1, BGC...</td>
-      <td>[BGC0001137.1, BGC0001295.1]</td>
-      <td>6</td>
-      <td>2</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/208355</td>
-    </tr>
-    <tr>
-      <th>200946</th>
-      <td>131525</td>
-      <td>4659</td>
-      <td>[BGC0001286.1, BGC0001864.1, BGC0002005.1, BGC...</td>
-      <td>[BGC0000736.1, BGC0000883.1, BGC0000765.1, BGC...</td>
-      <td>124</td>
-      <td>29</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/200946</td>
-    </tr>
-    <tr>
-      <th>207795</th>
-      <td>192</td>
-      <td>346</td>
-      <td>[]</td>
-      <td>[BGC0001476.1]</td>
-      <td>0</td>
-      <td>1</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/207795</td>
-    </tr>
-    <tr>
-      <th>213140</th>
-      <td>1871</td>
-      <td>1165</td>
-      <td>[BGC0001928.1, BGC0001893.1, BGC0001605.1, BGC...</td>
-      <td>[BGC0001882.1, BGC0001985.1, BGC0000887.1, BGC...</td>
-      <td>9</td>
-      <td>9</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/213140</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-with open(bigslice_query_processed / "gcf_summary.json") as json_file:
-    data = json.load(json_file)
-pd.DataFrame.from_dict(data).T
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>core_member</th>
-      <th>putative_member</th>
-      <th>core_member_mibig</th>
-      <th>putative_member_mibig</th>
-      <th>core_member_mibig_count</th>
-      <th>putative_member_mibig_count</th>
-      <th>link to BiG-FAM</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>203601</th>
-      <td>1406</td>
-      <td>201</td>
-      <td>[BGC0000850.1, BGC0000849.1, BGC0000848.1]</td>
-      <td>[]</td>
-      <td>3</td>
-      <td>0</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/203601</td>
-    </tr>
-    <tr>
-      <th>208355</th>
-      <td>6440</td>
-      <td>3186</td>
-      <td>[BGC0000595.1, BGC0000596.1, BGC0000933.1, BGC...</td>
-      <td>[BGC0001137.1, BGC0001295.1]</td>
-      <td>6</td>
-      <td>2</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/208355</td>
-    </tr>
-    <tr>
-      <th>200946</th>
-      <td>131525</td>
-      <td>4659</td>
-      <td>[BGC0001286.1, BGC0001864.1, BGC0002005.1, BGC...</td>
-      <td>[BGC0000736.1, BGC0000883.1, BGC0000765.1, BGC...</td>
-      <td>124</td>
-      <td>29</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/200946</td>
-    </tr>
-    <tr>
-      <th>207795</th>
-      <td>192</td>
-      <td>346</td>
-      <td>[]</td>
-      <td>[BGC0001476.1]</td>
-      <td>0</td>
-      <td>1</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/207795</td>
-    </tr>
-    <tr>
-      <th>213140</th>
-      <td>1871</td>
-      <td>1165</td>
-      <td>[BGC0001928.1, BGC0001893.1, BGC0001605.1, BGC...</td>
-      <td>[BGC0001882.1, BGC0001985.1, BGC0000887.1, BGC...</td>
-      <td>9</td>
-      <td>9</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/213140</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>214473</th>
-      <td>1</td>
-      <td>5</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>0</td>
-      <td>0</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/214473</td>
-    </tr>
-    <tr>
-      <th>204378</th>
-      <td>1</td>
-      <td>0</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>0</td>
-      <td>0</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/204378</td>
-    </tr>
-    <tr>
-      <th>204386</th>
-      <td>2</td>
-      <td>1</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>0</td>
-      <td>0</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/204386</td>
-    </tr>
-    <tr>
-      <th>202769</th>
-      <td>6</td>
-      <td>1</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>0</td>
-      <td>0</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/202769</td>
-    </tr>
-    <tr>
-      <th>214472</th>
-      <td>1</td>
-      <td>0</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>0</td>
-      <td>0</td>
-      <td>https://bigfam.bioinformatics.nl/run/6/gcf/214472</td>
-    </tr>
-  </tbody>
-</table>
-<p>114 rows × 7 columns</p>
-</div>
-
-
-
-The JSON file summarizes the information of a model:
-- **core_member**: number of member with threshold <= 900
-- **putative_member**: number of member with threshold > 900
-- **core_member_mibig**: list of MIBIG ids which part of the core member
-- **putative_member_mibig**: list of MIBIG ids which part of the putative member
-- **link to BiG-FAM**: a link to detailed information of each models in https://bigfam.bioinformatics.nl
-
-Let's add those information to our annotation file:
-
-
-```python
-df_annotation = pd.concat([df_annotation, bigfam_hits], axis=1)
-```
-
-
-```python
-df_annotation.to_csv("../tables/bigslice/query_annotation.csv")
-```
-
-# To Do
-- [ ] Tutorial Cytoscape
-- importing annotation
-- importing styles
-- filtering
-- explore the data
-
-## General
-- Automate network vis
-- Does the GCF makes sense?
-- We are using as6 while the model was built using as5. How do you think this will affect the analysis?
-
-## GCF table
-- Enrich GCF info from BiG-FAM
-- GCF member size?
-- Link to BiG-FAM
-- Which GCF has MiBiG hits on it?
-- What is the taxonomic distribution of the GCF?
-
-
-```python
-
-```
+## Import the annotation to Cytoscape <a name="5"></a>
+Download the `enriched_query_annotation.csv` and import it to enrich the nodes in Cytoscape network.
+Using the new annotations, play around and explore the network to find interesting BGCs and their BiG-FAM models.
