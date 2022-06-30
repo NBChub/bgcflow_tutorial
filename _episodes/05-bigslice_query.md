@@ -3,7 +3,7 @@ title: "Part I: Exploring BiG-SLICE query result"
 teaching: 0
 exercises: 20
 questions:
-    - " How do I explore BiG-SLICE query result"
+    - " How do I explore BiG-SLICE query result?"
 objectives:
     - Visualize query hits to BiG-FAM GCF models with Cytoscape
 keypoints:

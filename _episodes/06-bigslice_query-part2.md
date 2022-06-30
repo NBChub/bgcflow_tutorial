@@ -3,7 +3,7 @@ title: Exploring BiG-SLICE query result
 teaching: 0
 exercises: 20
 questions:
-    - " How do I annotate BiG-SLICE query result"
+    - " How do I annotate BiG-SLICE query result?"
 objectives:
     - "Enrich BiG-FAM hits with other BGCflow results"
 keypoints:
