@@ -3,7 +3,7 @@ title: "Introduction"
 teaching: 5
 exercises: 0
 questions:
-- "How do I get BGCflow into my computer?"
+- "How do I run BGCflow in my computer?"
 objectives:
 - "Getting a clone of BGCflow into your own machine"
 keypoints:
@@ -18,44 +18,91 @@ keypoints:
 
 ## Software Requirements
 ### Installing Conda
-BGCflow requires a UNIX based environment with conda installed.   
-
-### Installing Snakemake
-Installing Snakemake using [Mamba](https://github.com/mamba-org/mamba) is advised. In case you don’t use [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge) you can always install [Mamba](https://github.com/mamba-org/mamba) into any other Conda-based Python distribution with:
+* BGCflow requires a UNIX based environment with conda installed. See: https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
+* We advise users to also install [Mamba](https://github.com/mamba-org/mamba). In case you don’t use [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge) you can always install [Mamba](https://github.com/mamba-org/mamba) into any other Conda-based Python distribution with:
 
 ~~~
 conda install -n base -c conda-forge mamba
 ~~~
 {: .language-bash}
 
-Then install Snakemake (version 7.6.1) with:
 
+## Deploying a local copy of BGCFlow
+### Creating Conda Environment
+Let us install a conda environment called bgcflow:
 ~~~
-mamba create -c conda-forge -c bioconda -n snakemake snakemake=7.6.1
-~~~
-{: .language-bash}
-
-If you already have Snakemake, then update it to version 7.6.1 that is supported by BGCflow with:
-
-~~~
-mamba update -c conda-forge -c bioconda -n snakemake snakemake=7.6.1
+mamba create -n bgcflow pip -y
 ~~~
 {: .language-bash}
 
-For installation details, see the [instructions in the Snakemake documentation](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html).
-
-## Getting a clone of BGCflow
-### Using `git clone`
-To clone the BGCflow repository to your local system, do:
+### Installing BGCFlow wrapper
+We will use pip to install BGCFlow wrapper, a command line interface to help users interact with the BGCFlow snakemake workflows:
 ~~~
-git clone git@github.com:NBChub/bgcflow.git
+conda activate bgcflow
+pip install git+https://github.com/NBChub/bgcflow_wrapper.git
+bgcflow --help
 ~~~
 {: .language-bash}
 
-Make sure to have the right access / SSH Key.
+### Getting a copy of BGCFlow
+Go to the directory where you want to install BGCFlow and do:
+~~~
+cd <my bgcflow directory>
+bgcflow clone .
+~~~
+{: .language-bash}
+
+Make sure to have the right access / SSH Key. If you don't have the access, ask the instructor for a zipped copy of BGCFlow releases.
+
+### Initiating configuration from template
+To run BGCFlow, users need to set up a Snakemake configuration file and the PEP file for each projects. To initiate an example config.yaml from template and run an example project, do:
+~~~
+bgcflow init
+~~~
+{: .language-bash}
+
+You can do a dry-run (checking the workflow without actually running it) using:
+~~~
+bgcflow run -n
+~~~
+{: .language-bash}
+
+You can modify the configuration located in `config/config.yaml`. Note that current configuration run several projects located in the `.examples` folder:
+```yaml
+projects:
+# Project 1 (yaml object)
+  - name: example
+    samples: .examples/_genome_project_example/samples.csv
+    rules: .examples/_genome_project_example/project_config.yaml
+    prokka-db: .examples/_genome_project_example/prokka-db.csv
+    gtdb-tax: .examples/_genome_project_example/gtdbtk.bac120.summary.tsv
+
+# Project 2 (PEP file)
+  - name: .examples/_pep_example/project_config.yaml
+```
+
+### Running the Lactobacillus tutorial dataset
+For the tutorial, we will be running a small dataset of *Lactobacillus delbrueckii* genomes from NCBI. First, copy the folder `lactobacillus_delbruecki` from the `.examples` folder to the `config` folder:
+~~~
+cp .examples/lactobacillus_delbruecki config/. -r
+~~~
+{: .language-bash}
+
+Then, use text editor to modify `config/config.yaml`. Change the projects to:
+```yaml
+projects:
+  - name: config/lactobacillus_delbruecki/project_config.yaml
+```
+
+Do a dry run to make sure you are running the right project:
+```bash
+bgcflow run -n
+```
+
+When you are ready to run the workflow, remove the `-n` flag. You can see the full parameters by running `bgcflow run --help`.
 
 ### Download the latest release/tags
-Go to the github repository tags at [https://github.com/NBChub/bgcflow/tags](https://github.com/NBChub/bgcflow/tags) and click on the latest release/tags. On the assets, you can click the source code link to download it.
+The command `bgcflow clone` utilizes git to get the latest branch of BGCFlow. You can also grab other releases from the the github repository tags at [https://github.com/NBChub/bgcflow/tags](https://github.com/NBChub/bgcflow/tags) and click on the latest release/tags. On the assets, you can click the source code link to download it.
 
 {% include links.md %}
 
