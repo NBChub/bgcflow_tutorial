@@ -3,7 +3,7 @@ layout: lesson
 root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
-This is a short tutorial on [BGCflow](https://github.com/NBChub/bgcflow) specifically made for the [KAIST visit to DTU workshop](https://nbchub.github.io/2022-06-30-dtu/).
+A short tutorial on using [BGCflow](https://github.com/NBChub/bgcflow).
 
 <!-- this is an html comment -->
 
