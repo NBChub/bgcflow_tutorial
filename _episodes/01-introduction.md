@@ -31,8 +31,10 @@ Welcome to the BGCFlow tutorial! BGCFlow is a stack of bioinformatic tools that 
 ### Creating a Conda Environment
 Let's start by creating a dedicated Conda environment for BGCFlow:
 ```bash
-conda create -n bgcflow pip -y
+# create and activate a new conda environment
+mamba create -n bgcflow -c conda-forge python=3.11 pip openjdk -y # also install java for metabase
 ```
+- **PS:** This environment includes Java / OpenJDK which is required for serving `metabase`.
 
 ### Installing the BGCFlow wrapper
 Next, we'll install the BGCFlow wrapper, a command-line interface that makes working with BGCFlow's Snakemake workflows easier:
@@ -40,8 +42,11 @@ Next, we'll install the BGCFlow wrapper, a command-line interface that makes wor
 # activate bgcflow environment
 conda activate bgcflow
 
-# use pip to install the wrapper
-pip install git+https://github.com/NBChub/bgcflow_wrapper.git
+# install `BGCFlow` wrapper
+pip install bgcflow_wrapper
+
+# make sure to use bgcflow_wrapper version >= 0.2.7
+bgcflow --version # show the wrapper version
 
 # Verify the installation and view available command line arguments
 bgcflow --help
@@ -67,7 +72,8 @@ Commands:
   init        Create projects or initiate BGCFlow config from template.
   pipelines   Get description of available pipelines from BGCFlow.
   run         A snakemake CLI wrapper to run BGCFlow.
-  serve       Serve static HTML report or other utilities (Metabase, etc.).
+  serve       Serve static HTML report or other utilities (Metabase,...
+  sync        Upload and sync DuckDB database to Metabase.
 ```
 
 ### Additional pre-requisites
@@ -79,10 +85,6 @@ With the environment activated, install or setup this configurations:
 ```bash
 conda config --set channel_priority disabled
 conda config --describe channel_priority
-```
-- **Install Java (Required for `metabase`):** BGCFlow relies on Java for certain operations. Install OpenJDK using Conda:
-```bash
-conda install openjdk
 ```
 With these steps completed, you've laid a solid foundation for using BGCFlow effectively.
 
@@ -103,7 +105,7 @@ Replace `<my BGCFlow folder>` with the path to your desired destination director
 Additionally, you can specify a specific branch or release tags of BGCFlow to clone using the `--branch` option. By default, the `main` branch will be cloned.
 
 ```bash
-bgcflow clone --branch v0.7.1 <my BGCFlow folder>
+bgcflow clone --branch v0.8.1 <my BGCFlow folder>
 ```
 
 You can also manually grab other releases from the the [github repository tags](https://github.com/NBChub/bgcflow/tags) and click on the release/tags of your choice. On the assets, you can click the source code link to download it.
@@ -115,45 +117,21 @@ bgcflow init
 ~~~
 {: .language-bash}
 
-You can do a dry-run (checking the workflow without actually running it) using:
-~~~
-bgcflow run -n
-~~~
-{: .language-bash}
-
-You can modify the configuration located in `config/config.yaml`. Note that current configuration run several projects located in the `.examples` folder:
+You can modify the configuration located in `config/config.yaml` to point out to the right project PEPs.
 ```yaml
 projects:
-# Project 1 (yaml object)
-  - name: example
-    samples: .examples/_genome_project_example/samples.csv
-    rules: .examples/_genome_project_example/project_config.yaml
-    prokka-db: .examples/_genome_project_example/prokka-db.csv
-    gtdb-tax: .examples/_genome_project_example/gtdbtk.bac120.summary.tsv
-
-# Project 2 (PEP file)
-  - name: .examples/_pep_example/project_config.yaml
+  - name: config/Lactobacillus_delbruecki/project_config.yaml
 ```
 
 ### Running the Lactobacillus tutorial dataset
-For the tutorial, we will be running a small dataset of *Lactobacillus delbrueckii* genomes from NCBI. First, copy the folder `lactobacillus_delbruecki` from the `.examples` folder to the `config` folder:
-~~~
-cp .examples/lactobacillus_delbruecki config/. -r
-~~~
-{: .language-bash}
+For the tutorial, we will be running a small dataset of *Lactobacillus delbrueckii* genomes from NCBI.
 
-Then, use text editor to modify `config/config.yaml`. Change the projects to:
-```yaml
-projects:
-  - name: config/lactobacillus_delbruecki/project_config.yaml
-```
-
-Do a dry run to make sure you are running the right project:
+You can do a dry-run (checking the workflow without actually running it) using:
 ```bash
 bgcflow run -n
 ```
 
-When you are ready to run the workflow, remove the `-n` flag. You can see the full parameters by running `bgcflow run --help`.
+When you are ready to run the workflow, remove the `-n` flag. You can see the full parameters by running `bgcflow run --help`. For now, let it be and skip to the next section of the tutorial.
 
 ### Download the latest release/tags
 The command `bgcflow clone` utilizes git to get the latest branch of BGCFlow. You can also grab other releases from the the github repository tags at [https://github.com/NBChub/bgcflow/tags](https://github.com/NBChub/bgcflow/tags) and click on the latest release/tags. On the assets, you can click the source code link to download it.

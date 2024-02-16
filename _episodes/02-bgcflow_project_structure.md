@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Setting up configuration and files to start a BGCflow project"
 keypoints:
-- "A project requires at least a unique `name` and a `.csv` file containing a list of genomes to analyse"
+- "A project requires a PEP configuration and a `.csv` file containing a list of genomes to analyse"
 - "The project is then defined in the `config.yaml` file"
 - An example of a project config can be found in `config/examples`
 ---
@@ -18,26 +18,17 @@ cd bgcflow
 ~~~
 {: .language-bash}
 
-To run a Snakemake workflow, we need to activate the Snakemake conda environment and invoke the command. Let's try to do a dry run:
+To run BGCFlow, we need to activate the BGCFlow conda environment and invoke the command line interface:
 ~~~
-conda activate snakemake
-snakemake -n
+conda activate bgcflow
+bgcflow --help
 ~~~
 {: .language-bash}
-
-Oops! You will be likely to get this error:
-```bash
-WorkflowError in line 30 of /datadrive/test/bgcflow/workflow/rules/common.smk:
-Workflow defines configfile config/config.yaml but it is not present or accessible.
-  File "/datadrive/test/bgcflow/workflow/Snakefile", line 1, in <module>
-  File "/datadrive/test/bgcflow/workflow/rules/common.smk", line 30, in <module>
-```
-
-This happens because Snakemake can't find the config file required to run our project.
 
 ### Setting up your project samples
 In this tutorial, we will analyse 18 publicly available Streptomyces venezuelae genomes. To do that, we will need to prepare a `sample.csv` file with a list of the genome accession ids.
 Please find the `sample.csv` for the tutorial here: [https://github.com/NBChub/bgcflow_tutorial/blob/gh-pages/files/samples.csv](https://github.com/NBChub/bgcflow_tutorial/blob/gh-pages/files/samples.csv).
+
 This is how the top of the table looks like:
 
 
